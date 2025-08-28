@@ -1,18 +1,42 @@
 <?php
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Modules\Ifillable\Http\Controllers\Api\FieldApiController;
+use Modules\Ifillable\Http\Controllers\Api\ModelFillableApiController;
+// add-use-controller
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 
-Route::middleware('auth:api')->get('/ifillable', function (Request $request) {
-    return $request->user();
+Route::prefix('/ifillable/v1')->group(function () {
+    Route::apiCrud([
+      'module' => 'ifillable',
+      'prefix' => 'fields',
+      'controller' => FieldApiController::class,
+      'permission' => 'ifillable.fields',
+      //'middleware' => ['create' => [], 'index' => [], 'show' => [], 'update' => [], 'delete' => [], 'restore' => []],
+      // 'customRoutes' => [ // Include custom routes if needed
+      //  [
+      //    'method' => 'post', // get,post,put....
+      //    'path' => '/some-path', // Route Path
+      //    'uses' => 'ControllerMethodName', //Name of the controller method to use
+      //    'middleware' => [] // if not set up middleware, auth:api will be the default
+      //  ]
+      // ]
+    ]);
+    Route::apiCrud([
+        'module' => 'ifillable',
+        'prefix' => 'model-fillables',
+        'controller' => ModelFillableApiController::class,
+        'permission' => 'ifillable.modelFillables',
+        //'middleware' => ['create' => [], 'index' => [], 'show' => [], 'update' => [], 'delete' => [], 'restore' => []],
+        // 'customRoutes' => [ // Include custom routes if needed
+        //  [
+        //    'method' => 'post', // get,post,put....
+        //    'path' => '/some-path', // Route Path
+        //    'uses' => 'ControllerMethodName', //Name of the controller method to use
+        //    'middleware' => [] // if not set up middleware, auth:api will be the default
+        //  ]
+        // ]
+    ]);
+// append
+
 });

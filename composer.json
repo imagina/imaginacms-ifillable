@@ -1,40 +1,31 @@
 {
-    "name": "imagina/ifillable-module",
+    "name": "imagina/ifillable",
     "description": "",
-    "type": "asgard-module",
-    "license": "MIT",
-    "require": {
-        "php": "^8.1",
-        "composer/installers": "~1.0",
-        "imagina/core-module": "^10.0"
-    },
-    "require-dev": {
-        "orchestra/testbench": "^8.5",
-        "phpunit/phpunit": "^10"
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Modules\\Ifillable\\": ".",
-            "Modules\\": "Modules/"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "authors": [
         {
-            "name": "Imagina Dev",
+            "name": "Imagina Colombia",
             "email": "soporte@imaginacolombia.com"
         }
     ],
     "extra": {
-        "branch-alias": {
-            "dev-master": "4.0.x-dev",
-            "dev-v10.x": "10.0.x-dev"
+        "laravel": {
+            "providers": [],
+            "aliases": {}
         }
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Ifillable\\": ""
+            "Modules\\Ifillable\\": "app/",
+            "Modules\\Ifillable\\Database\\Factories\\": "database/factories/",
+            "Modules\\Ifillable\\Database\\Seeders\\": "database/Seeders/"
+        },
+        "files": [
+            "Support/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Ifillable\\Tests\\": "tests/"
         }
     }
 }
