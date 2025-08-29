@@ -21,7 +21,7 @@
       "Modules\\Ifillable\\Database\\Seeders\\": "database/Seeders/"
     },
     "files": [
-      "Support/helpers.php"
+      "support/helpers.php"
     ]
   },
   "autoload-dev": {

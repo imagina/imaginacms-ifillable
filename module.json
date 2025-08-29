@@ -9,6 +9,6 @@
         "Modules\\Ifillable\\Providers\\IfillableServiceProvider"
     ],
     "files": [
-        "Support/helpers.php"
+        "support/helpers.php"
     ]
 }
