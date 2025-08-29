@@ -17,11 +17,11 @@
   "autoload": {
     "psr-4": {
       "Modules\\Ifillable\\": "app/",
-      "Modules\\Ifillable\\Database\\Factories\\": "database/factories/",
-      "Modules\\Ifillable\\Database\\Seeders\\": "database/Seeders/"
+      "Modules\\Ifillable\\Database\\Factories\\": "database_tp/factories/",
+      "Modules\\Ifillable\\Database\\Seeders\\": "database_tp/Seeders/"
     },
     "files": [
-      "support/helpers.php"
+      "support_tp/helpers.php"
     ]
   },
   "autoload-dev": {
