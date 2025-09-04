@@ -4,6 +4,7 @@ namespace Modules\Ifillable\Models;
 
 use Astrotomic\Translatable\Translatable;
 use Imagina\Icore\Models\CoreModel;
+use Modules\Ifillable\Support\FieldCollection;
 
 class Field extends CoreModel
 {
@@ -35,4 +36,13 @@ class Field extends CoreModel
       'entity_id',
       'entity_type',
   ];
+
+  /**
+   * Implementation to Relations in transformers in Modules.
+   */
+  public function newCollection(array $models = []): FieldCollection
+  {
+    return new FieldCollection($models);
+  }
+
 }

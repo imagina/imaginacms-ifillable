@@ -9,6 +9,7 @@
         "Modules\\Ifillable\\Providers\\IfillableServiceProvider"
     ],
     "files": [
-        "support/helpers.php"
+        "support/helpers.php",
+        "support/FieldCollection.php"
     ]
 }
